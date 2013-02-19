@@ -71,10 +71,8 @@
    });
 
  license: The MIT License, Copyright (c) 2009-2011 YUKI "Piro" Hiroshi
-   http://github.com/piroor/fxaddonlibs/blob/master/license.txt
  original:
-   http://github.com/piroor/fxaddonlibs/blob/master/operationHistory.js
-   http://github.com/piroor/fxaddonlibs/blob/master/operationHistory.test.js
+   http://github.com/piroor/fxaddonlib-operation-history
 */
 (function() {
 	const currentRevision = 64;
