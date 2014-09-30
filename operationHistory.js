@@ -806,7 +806,7 @@
 				aElement.setAttribute(this.ELEMENT_ID, id);
 				try {
 					if (aElement.localName == 'tab')
-						SessionStore.setTabValue(aElement, this.ELEMENT_ID, id);
+						SessionStore.setTabValue(aElement, this.ELEMENT_ID, String(id));
 				}
 				catch(e) {
 				}
