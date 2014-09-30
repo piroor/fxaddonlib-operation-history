@@ -70,7 +70,7 @@
        item.setAttribute('checked', true);
    });
 
- license: The MIT License, Copyright (c) 2009-2011 YUKI "Piro" Hiroshi
+ license: The MIT License, Copyright (c) 2009-2014 YUKI "Piro" Hiroshi
  original:
    http://github.com/piroor/fxaddonlib-operation-history
 */
