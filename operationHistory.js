@@ -842,11 +842,11 @@
 		{
 			if (!aTarget)
 				return null;
-			if (aTarget instanceof Ci.nsIDOMWindow)
+			if (aTarget instanceof Window)
 				return this.getWindowId(aTarget, aDefaultId);
-			if (aTarget instanceof Ci.nsIDOMDocument)
+			if (aTarget instanceof Document)
 				return this.getWindowId(aTarget.defaultView, aDefaultId);
-			if (aTarget instanceof Ci.nsIDOMElement)
+			if (aTarget instanceof Element)
 				return this.getElementId(aTarget, aDefaultId);
 			throw new Error(aTarget+' is an unknown type item.');
 		},
@@ -1101,7 +1101,7 @@
 				task  = null,
 				index = -1;
 			Array.slice(aArguments).some(function(aArg) {
-				if (aArg instanceof Ci.nsIDOMWindow)
+				if (aArg instanceof Window)
 					w = aArg;
 				else if (typeof aArg == 'string')
 					name = aArg;
@@ -1140,11 +1140,11 @@
 			Array.slice(aArguments).forEach(function(aArg) {
 				if (typeof aArg == 'string')
 					id = aArg;
-				else if (aArg instanceof Ci.nsIDOMDocument)
+				else if (aArg instanceof Document)
 					document = aArg;
-				else if (aArg instanceof Ci.nsIDOMWindow)
+				else if (aArg instanceof Window)
 					document = aArg.document;
-				else if (aArg instanceof Ci.nsIDOMNode)
+				else if (aArg instanceof Node)
 					parent = aArg;
 			});
 
