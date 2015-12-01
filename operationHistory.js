@@ -235,13 +235,15 @@
 							try {
 								iterator.next();
 							}
-							catch(e if e instanceof StopIteration) {
-								onFinish();
-								return false;
-							}
 							catch(e) {
-								log(e);
-								return false;
+								if (e instanceof StopIteration) {
+									onFinish();
+									return false;
+								}
+								else {
+									log(e);
+									return false;
+								}
 							}
 							finally {
 								if (error)
@@ -249,8 +251,13 @@
 							}
 						}, 10);
 				}
-				catch(e if e instanceof StopIteration) {
-					onFinish();
+				catch(e) {
+					if (e instanceof StopIteration) {
+						onFinish();
+					}
+					else {
+						throw e;
+					}
 				}
 			}
 
@@ -384,14 +391,16 @@
 						try {
 							iterator.next();
 						}
-						catch(e if e instanceof StopIteration) {
-							done.done = true;
-							onFinish();
-							return false;
-						}
 						catch(e) {
-							log(e);
-							return false;
+							if (e instanceof StopIteration) {
+								done.done = true;
+								onFinish();
+								return false;
+							}
+							else {
+								log(e);
+								return false;
+							}
 						}
 						finally {
 							if (error)
@@ -399,8 +408,13 @@
 						}
 					}, 10);
 			}
-			catch(e if e instanceof StopIteration) {
-				onFinish();
+			catch(e) {
+				if (e instanceof StopIteration) {
+					onFinish();
+				}
+				else {
+					throw e;
+				}
 			}
 
 			if (error)
@@ -528,14 +542,16 @@
 						try {
 							iterator.next();
 						}
-						catch(e if e instanceof StopIteration) {
-							done.done = true;
-							onFinish();
-							return false;
-						}
 						catch(e) {
-							log(e);
-							return false;
+							if (e instanceof StopIteration) {
+								done.done = true;
+								onFinish();
+								return false;
+							}
+							else {
+								log(e);
+								return false;
+							}
 						}
 						finally {
 							if (error)
@@ -543,8 +559,13 @@
 						}
 					}, 10);
 			}
-			catch(e if e instanceof StopIteration) {
-				onFinish();
+			catch(e) {
+				if (e instanceof StopIteration) {
+					onFinish();
+				}
+				else {
+					throw e;
+				}
 			}
 
 			if (error)
@@ -593,13 +614,15 @@
 						try {
 							iterator.next();
 						}
-						catch(e if e instanceof StopIteration) {
-							done.done = true;
-							window.clearInterval(timer);
-							return false;
-						}
 						catch(e) {
-							return false;
+							if (e instanceof StopIteration) {
+								done.done = true;
+								window.clearInterval(timer);
+								return false;
+							}
+							else {
+								return false;
+							}
 						}
 					}, 10);
 			}
